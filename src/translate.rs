@@ -105,6 +105,17 @@ impl Grammar {
 
 		recursions
 	}
+
+	fn is_nullable(rule: &Rule, rule_map: &HashMap<&str, &Rule>) -> bool {
+
+	}
+}
+
+struct NullableChecker<'a> {
+	rule_map: &'a HashMap<&'a str, &'a Rule>,
+	rule_name: &'a str,
+	rule_stack: Vec<&'a str>,
+	visited_rules: HashSet<&'a str>,
 }
 
 struct LeftRecursionChecker<'a> {
